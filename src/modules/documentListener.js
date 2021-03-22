@@ -1,23 +1,33 @@
 import togglePopup from "./togglePopup";
 import toggleMenu from "./toggleMenu";
+import popupOpen from "./popupOpen";
+import popupCLose from "./popupClose";
 
 /**
- * Добавление событий клика по документу (делегирование)
+ * Добавление событий клика/клавиш по документу (делегирование)
  */
 const documentListener = () => {
-
     document.addEventListener('click', (e) => {
         const target = e.target;                //куда кликнули
-        console.log(target)
-    });
-    document.addEventListener('keydown', function(event) {
-        if(event.key === 'Escape') {
-            const activePopup = document.querySelector('.popup.open');
-            const activeMenu = document.querySelector('.popup-dialog-menu.active');
-            if(activePopup && activeMenu){
-                togglePopup(activePopup, toggleMenu);
+        const popup = target.closest('.popup');
+        if (popup) {
+            const popupContent = target.closest('.popup-content');
+            if (!popupContent) {
+                popupCLose(popup);
             } else {
-                togglePopup(activePopup);
+                const closeBtn = target.closest('.close');
+                if(closeBtn){
+                    popupCLose(closeBtn.closest('.popup'));
+                }
+            }
+        }
+
+    });
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+            const activePopup = document.querySelector('.popup.open');
+            if (activePopup) {
+                popupCLose(activePopup);
             }
         }
     });

@@ -1,32 +1,34 @@
 import togglePopup from "./togglePopup";
 import scrollToElement from "./scrollToElement";
 import toggleMenu from "./toggleMenu";
+import popupOpen from "./popupOpen";
+import popupCLose from "./popupClose";
 
 const menuInit = () => {
-    const icon = document.querySelector('.menu__icon');
+    const menuIcon = document.querySelector('.menu__icon');
     const popupMenu = document.querySelector('.popup.popup-menu');
     const popupDialogMenu = document.querySelector('.popup-dialog-menu');
 
-    popupMenu.addEventListener('click', (e) => {
-        let target = e.target;
+    menuIcon.addEventListener('click', (e) => {
+        popupOpen(popupMenu, toggleMenu);
+    });
 
-        if(target.matches('.close-menu')){
-            togglePopup(popupMenu, toggleMenu);
-        } else if (target.matches('.menu-link')){
+    /**
+     * События по клику на самом меню
+     */
+    popupMenu.addEventListener('click', (e) => {
+        const target = e.target;
+        const popupMenuNavItem = target.closest('.popup-menu-nav__item');
+        if (popupMenuNavItem){           //по пунктам меню
             e.preventDefault();
-            let targetElementName = target.getAttribute('href').slice(1);
-            let targetElement = document.getElementById(targetElementName);
+            const targetElementName = popupMenuNavItem.querySelector('a').getAttribute('href').slice(1);
+            const targetElement = document.getElementById(targetElementName);
             scrollToElement(targetElement, 200);//плавный скролл до него
-            togglePopup(popupMenu, toggleMenu);//закрываем меню
-        } else if(!target.closest('.popup-dialog-menu') && popupDialogMenu.classList.contains('active')){
-            togglePopup(popupMenu, toggleMenu);
+            popupCLose(popupMenu);//закрываем меню
         }
 
-        console.log(target)
     })
 
-    icon.addEventListener('click', (e) => {
-        togglePopup(popupMenu, toggleMenu);
-    });
+
 }
 export default menuInit;
