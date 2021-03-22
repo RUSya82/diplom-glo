@@ -1,2 +1,3 @@
-import test from "./modules/test";
-test();
+
+import showPhone from "./modules/showPhone";
+showPhone();
