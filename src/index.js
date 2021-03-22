@@ -1,5 +1,10 @@
-
 import showPhone from "./modules/showPhone";
-import toggleMenu from "./modules/toggleMenu";
+import documentListener from "./modules/documentListener";
+import buttonUp from "./modules/buttonUp";
+import menuInit from "./modules/menuInit";
+
+
 showPhone();
-toggleMenu();
+menuInit();
+documentListener();
+buttonUp();
