@@ -5,13 +5,16 @@ import popupOpen from "./popupOpen";
 import popupCLose from "./popupClose";
 
 const menuInit = () => {
-    const menuIcon = document.querySelector('.menu__icon');
+    const menuIcons = document.querySelectorAll('.menu__icon');
     const popupMenu = document.querySelector('.popup.popup-menu');
     const popupDialogMenu = document.querySelector('.popup-dialog-menu');
 
-    menuIcon.addEventListener('click', (e) => {
-        popupOpen(popupMenu, toggleMenu);
-    });
+    menuIcons.forEach(item => {
+        item.addEventListener('click', (e) => {
+            popupOpen(popupMenu, toggleMenu);
+        });
+    })
+
 
     /**
      * События по клику на самом меню

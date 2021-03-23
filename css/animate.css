@@ -14,6 +14,7 @@
 
 .formula-item-popup.formula-item-popup__reverted{
     top: 100px;
+    padding-top: 40px;
 }
 .formula-item-popup.formula-item-popup__reverted:before{
     transform: rotate(180deg);
@@ -22,4 +23,11 @@
 .formula-item-popup.formula-item-popup__reverted p{
     padding-top: 15px;
 }
+.formula-item-popup.active{
+    opacity: 1;
+    visibility: visible;
+}
+/*.formula-item-popup.active .formula-item__icon-inner{*/
+/*    opacity: 1;*/
+/*}*/
 
