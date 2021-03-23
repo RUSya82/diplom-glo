@@ -3,7 +3,7 @@
  * @param popup - ссылка на модалку
  * @param handler - callback функция, которую необходимо выполнить вместе с закрытием
  */
-import calcScroll from "./calcScroll";
+import calcScroll from "./lib/calcScroll";
 const togglePopup = (popup, handler, ...parameters) => {
     //console.log(parameters);
     // const popupOpened = document.querySelectorAll('.popup.open');

@@ -1,4 +1,4 @@
-import scrollToElement from "./scrollToElement";
+import scrollToElement from "./lib/scrollToElement";
 
 const buttonUp = () => {
     //если кликнули по кнопке "ВВЕРХ" в футере

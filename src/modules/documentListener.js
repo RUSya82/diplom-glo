@@ -1,6 +1,3 @@
-import togglePopup from "./togglePopup";
-import toggleMenu from "./toggleMenu";
-import popupOpen from "./popupOpen";
 import popupCLose from "./popupClose";
 
 /**

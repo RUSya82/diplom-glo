@@ -1,6 +1,5 @@
 import popupCLose from "./popupClose";
 import toggleLockBody from "./toggleLockBody";
-import toggleMenu from "./toggleMenu";
 
 const popupOpen = (popup, callback) => {
     const popupOpened = document.querySelectorAll('.popup.open');

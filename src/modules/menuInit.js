@@ -1,5 +1,5 @@
 import togglePopup from "./togglePopup";
-import scrollToElement from "./scrollToElement";
+import scrollToElement from "./lib/scrollToElement";
 import toggleMenu from "./toggleMenu";
 import popupOpen from "./popupOpen";
 import popupCLose from "./popupClose";

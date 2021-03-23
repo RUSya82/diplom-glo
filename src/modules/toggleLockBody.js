@@ -1,12 +1,13 @@
-import calcScroll from "./calcScroll";
+import calcScroll from "./lib/calcScroll";
 
 const toggleLockBody = () => {
-    document.body.classList.toggle('lock');
+    const body = document.body;
+    body.classList.toggle('lock');
     const bodyScroll = calcScroll();
-    if(document.body.classList.contains('lock')){
-        document.body.style.marginRight = `${bodyScroll}px`;
+    if(body.classList.contains('lock')){
+        body.style.marginRight = `${bodyScroll}px`;
     } else {
-        document.body.style.marginRight = `0`;
+        body.style.marginRight = `0`;
     }
 }
 export default toggleLockBody;
