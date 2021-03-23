@@ -6,6 +6,7 @@ import maskPhone from "./modules/lib/maskPhone";
 import bindModal from "./modules/bindModal";
 import SliderCompany from "./modules/lib/sliderCompany";
 import formListener from "./modules/formListener";
+import iconHoverInit from "./modules/iconHoverInit";
 
 
 showPhone();
@@ -17,6 +18,7 @@ bindModal('.link-privacy', '.popup-privacy');
 bindModal('.link-list', '.popup-repair-types');
 bindModal('.button_wide', '.popup-consultation');
 formListener();
+iconHoverInit();
 const sliderCompany = new SliderCompany({
     main: '.repair-types-slider',
     wrapper: '.types-repair1',

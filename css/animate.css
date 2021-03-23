@@ -11,3 +11,14 @@
 .lock{
     overflow: hidden;
 }
+
+.formula-item-popup.formula-item-popup__reverted{
+    top: 100px;
+}
+.formula-item-popup.formula-item-popup__reverted:before{
+    transform: rotate(180deg);
+}
+
+.formula-item-popup.formula-item-popup__reverted p{
+    padding-top: 15px;
+}
