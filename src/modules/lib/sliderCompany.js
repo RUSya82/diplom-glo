@@ -23,6 +23,7 @@ class SliderCompany {
             this.slideWidth = Math.floor(100 / this.slidesToShow);
             this.next = document.querySelector(arrowNext);
             this.prev = document.querySelector(arrowPrev);
+            this.rand = this.randomInteger(100, 10000);
         } catch (e) {
             console.error(e);
         }
@@ -42,10 +43,17 @@ class SliderCompany {
     }
 
     addGloClass() {
-        this.main.classList.add('glo-slider');
-        this.wrapper.classList.add('glo-slider__wrapper');
+        this.main.classList.add('glo-slider' + this.rand);
+        this.wrapper.classList.add('glo-slider__wrapper' + this.rand);
         for (const item of this.slides) {
-            item.classList.add('glo-slider__item');
+            item.classList.add('glo-slider__item' + this.rand);
+        }
+    }
+    removeGloClass() {
+        this.main.classList.remove('glo-slider' + this.rand);
+        this.wrapper.classList.remove('glo-slider__wrapper' + this.rand);
+        for (const item of this.slides) {
+            item.classList.remove('glo-slider__item' + this.rand);
         }
     }
 
@@ -76,22 +84,22 @@ class SliderCompany {
     }
 
     addStyle() {
-        let style = document.getElementById('gloSliderStyle');
+        let style = document.getElementById('gloSliderStyle'+ this.rand);
         if (!style) {
             style = document.createElement('style');
-            style.id = 'gloSliderStyle';
+            style.id = 'gloSliderStyle' + this.rand;
         }
         style.textContent = `
-            .glo-slider{
+            .glo-slider${this.rand}{
                 overflow: hidden !important;
             }
-            .glo-slider__wrapper{
-                display: flex !important;
+            .glo-slider__wrapper${this.rand}{
+                display: flex;
                 transition: transform 0.5s !important;
                 will-change: transform !important;
                 
             }
-            .glo-slider__item{
+            .glo-slider__item${this.rand}{
                 flex: 0 0 ${this.slideWidth}% !important;
                 display: flex !important;;
                 align-items: center !important;;
@@ -117,14 +125,14 @@ class SliderCompany {
     addArrows() {
         this.prev = document.createElement('button');
         this.next = document.createElement('button');
-        this.prev.classList.add('glo-button__prev');
-        this.next.classList.add('glo-button__next');
+        this.prev.classList.add('glo-button__prev' + this.rand);
+        this.next.classList.add('glo-button__next'+ this.rand);
         this.main.appendChild(this.prev);
         this.main.appendChild(this.next);
         const style = document.createElement('style');
         style.textContent = `
-            .glo-button__prev,
-            .glo-button__next{
+            .glo-button__prev${this.rand},
+            .glo-button__next${this.rand}{
                 width: 40px;
                 height: 40px;
                 margin: 5px 20px;
@@ -133,21 +141,21 @@ class SliderCompany {
                 border-bottom: none;
                 background: transparent;
             }
-            .glo-button__prev{
+            .glo-button__prev${this.rand}{
                 transform: rotate(-45deg);
                 border-left: 5px solid #19b5fe;
                 border-right: none;
             }
-            .glo-button__next{
+            .glo-button__next${this.rand}{
                 transform: rotate(45deg);
                 border-right: 5px solid #19b5fe;
                 border-left: none;
                 
             }
-            .glo-button__prev:hover,
-            .glo-button__next:hover,
-            .glo-button__prev:focus,
-            .glo-button__next:focus{
+            .glo-button__prev${this.rand}:hover,
+            .glo-button__next${this.rand}:hover,
+            .glo-button__prev${this.rand}:focus,
+            .glo-button__next${this.rand}:focus{
                 background: transparent;
                 outline: none;
             }
@@ -158,6 +166,18 @@ class SliderCompany {
     addControls() {
         this.prev.addEventListener('click', this.prevSlide.bind(this));
         this.next.addEventListener('click', this.nextSlide.bind(this));
+    }
+    deInit(){
+        this.prev.removeEventListener('click', this.prevSlide.bind(this));
+        this.next.removeEventListener('click', this.nextSlide.bind(this));
+        let style = document.getElementById('gloSliderStyle'+ this.rand);
+        style.remove();
+
+        this.removeGloClass();
+    }
+    randomInteger(min, max) {
+        let rand = min - 0.5 + Math.random() * (max - min + 1);
+        return Math.round(rand);
     }
 
 }
