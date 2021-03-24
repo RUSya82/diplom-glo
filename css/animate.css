@@ -47,6 +47,13 @@
         flex-wrap: nowrap;
     }
 }
+.popup-transparency-slider__slide{
+    display: none !important;
+}
+.popup-transparency-slider__slide.active{
+    display: block !important;
+}
+
 
 
 

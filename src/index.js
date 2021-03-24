@@ -9,6 +9,7 @@ import formListener from "./modules/formListener";
 import iconHoverInit from "./modules/iconHoverInit";
 import typesRepairTypes from "./modules/typesRepairTypes";
 import transparensySlider from "./modules/transparensySlider";
+import transparencyPopupSlider from "./modules/transparencyPopupSlider";
 
 
 showPhone();
@@ -19,6 +20,7 @@ maskPhone('input[name=phone]');
 bindModal('.link-privacy', '.popup-privacy');
 bindModal('.link-list', '.popup-repair-types');
 bindModal('.button_wide', '.popup-consultation');
+bindModal('.transparency-item', '.popup-transparency', transparencyPopupSlider);
 formListener();
 iconHoverInit();
 typesRepairTypes();

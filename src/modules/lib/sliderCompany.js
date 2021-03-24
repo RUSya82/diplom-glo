@@ -69,7 +69,6 @@ class SliderCompany {
         }
         this.addControls();
         if (this.responsive.length !== 0) {
-            console.log('responsiveInit')
             this.responsiveInit();
         }
         if(this.progress.useProgress){
@@ -144,6 +143,7 @@ class SliderCompany {
             }
             .glo-slider__wrapper${this.rand}{
                 display: flex;
+                flex-wrap: nowrap;
                 transition: transform 0.5s !important;
                 will-change: transform !important;
 
@@ -160,7 +160,6 @@ class SliderCompany {
     }
 
     nextSlide() {
-        console.log('next')
         if (this.position + this.slidesToShow < this.slides.length) {
             this.wrapper.style.transform = `translateX(${-(++this.position * this.slideWidth)}%)`;
             if(this.progress.useProgress){
