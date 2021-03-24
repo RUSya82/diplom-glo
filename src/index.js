@@ -21,44 +21,5 @@ bindModal('.button_wide', '.popup-consultation');
 formListener();
 iconHoverInit();
 typesRepairTypes();
-// const sliderCompany = new SliderCompany({
-//     main: '.repair-types-slider',
-//     wrapper: '.types-repair1',
-//     slidesToShow: 1,
-//     arrowNext: '#repair-types-arrow_right',
-//     arrowPrev: '#repair-types-arrow_left'
-// });
-// sliderCompany.init();
-// const sliderCompany2 = new SliderCompany({
-//     main: '.repair-types-slider',
-//     wrapper: '.types-repair2',
-//     slidesToShow: 1,
-//     arrowNext: '#repair-types-arrow_right',
-//     arrowPrev: '#repair-types-arrow_left'
-// });
-// sliderCompany2.init();
-// const sliderCompany3 = new SliderCompany({
-//     main: '.repair-types-slider',
-//     wrapper: '.types-repair3',
-//     slidesToShow: 1,
-//     arrowNext: '#repair-types-arrow_right',
-//     arrowPrev: '#repair-types-arrow_left'
-// });
-// sliderCompany3.init();
-// const sliderCompany4 = new SliderCompany({
-//     main: '.repair-types-slider',
-//     wrapper: '.types-repair4',
-//     slidesToShow: 1,
-//     arrowNext: '#repair-types-arrow_right',
-//     arrowPrev: '#repair-types-arrow_left'
-// });
-// sliderCompany4.init();
-// const sliderCompany5 = new SliderCompany({
-//     main: '.repair-types-slider',
-//     wrapper: '.types-repair5',
-//     slidesToShow: 1,
-//     arrowNext: '#repair-types-arrow_right',
-//     arrowPrev: '#repair-types-arrow_left'
-// });
-// sliderCompany5.init();
+
 

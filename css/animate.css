@@ -26,8 +26,20 @@
 .formula-item-popup.active{
     opacity: 1;
     visibility: visible;
+
 }
-/*.formula-item-popup.active .formula-item__icon-inner{*/
-/*    opacity: 1;*/
-/*}*/
+.repair-types-nav__item-block{
+    margin-top: 22px;
+}
+.repair-types-nav__item-block:first-child{
+    margin-top: 0;
+}
+@media (max-width: 1024px) {
+    .repair-types-nav__item-block{
+        display: flex;
+        justify-content: center;
+
+    }
+}
+
 

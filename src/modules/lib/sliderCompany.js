@@ -8,6 +8,12 @@ class SliderCompany {
             responsive = [],
             arrowNext,
             arrowPrev,
+            progress = {
+                useProgress: false
+            },
+            maxWidth = false,
+            addStyleDefault = true,
+
         }) {
         try {
             this.main = document.querySelector(main);
@@ -24,6 +30,23 @@ class SliderCompany {
             this.next = document.querySelector(arrowNext);
             this.prev = document.querySelector(arrowPrev);
             this.rand = this.randomInteger(100, 10000);
+            this.progress = progress;
+            this.psThis = this.prevSlide.bind(this);
+            this.nxThis = this.nextSlide.bind(this);
+            this.maxWidth = maxWidth;
+            this.addStyleDefault = addStyleDefault;
+            if(this.maxWidth){
+                window.addEventListener('resize', () => {
+                    const windowWidth = document.documentElement.clientWidth;
+                    if(windowWidth < this.maxWidth){
+                        this.init();
+                    } else {
+                        this.deInit();
+                    }
+                });
+            }else {
+                this.init();
+            }
         } catch (e) {
             console.error(e);
         }
@@ -32,14 +55,36 @@ class SliderCompany {
 
     init() {
         this.addGloClass();
-        this.addStyle();
+
+        if(this.addStyleDefault){
+            this.addStyle();
+        }
+
         if(!this.next && !this.prev){
             this.addArrows();
         }
         this.addControls();
-        if (this.responsive) {
+        if (this.responsive.length !== 0) {
+            console.log('responsiveInit')
             this.responsiveInit();
         }
+        if(this.progress.useProgress){
+            this.totalField = document.querySelector(this.progress.total);
+            this.currentField = document.querySelector(this.progress.current);
+            if(!this.totalField || !this.currentField){
+                this.progress.useProgress = false;
+            } else {
+                this.setTotalField();
+                this.setCurrentField();
+            }
+        }
+    }
+
+    setCurrentField(){
+        this.currentField.innerText = `${this.position + 1}`;
+    }
+    setTotalField(){
+        this.totalField.innerText = this.slides.length;
     }
 
     addGloClass() {
@@ -97,7 +142,7 @@ class SliderCompany {
                 display: flex;
                 transition: transform 0.5s !important;
                 will-change: transform !important;
-                
+
             }
             .glo-slider__item${this.rand}{
                 flex: 0 0 ${this.slideWidth}% !important;
@@ -113,12 +158,18 @@ class SliderCompany {
     nextSlide() {
         if (this.position + this.slidesToShow < this.slides.length) {
             this.wrapper.style.transform = `translateX(${-(++this.position * this.slideWidth)}%)`;
+            if(this.progress.useProgress){
+                this.setCurrentField();
+            }
         }
     }
 
     prevSlide() {
         if (this.position > 0) {
             this.wrapper.style.transform = `translateX(-${--this.position * this.slideWidth}%)`;
+            if(this.progress.useProgress){
+                this.setCurrentField();
+            }
         }
     }
 
@@ -150,7 +201,7 @@ class SliderCompany {
                 transform: rotate(45deg);
                 border-right: 5px solid #19b5fe;
                 border-left: none;
-                
+
             }
             .glo-button__prev${this.rand}:hover,
             .glo-button__next${this.rand}:hover,
@@ -164,14 +215,17 @@ class SliderCompany {
     }
 
     addControls() {
-        this.prev.addEventListener('click', this.prevSlide.bind(this));
-        this.next.addEventListener('click', this.nextSlide.bind(this));
+        this.prev.addEventListener('click', this.psThis);
+        this.next.addEventListener('click', this.nxThis);
     }
     deInit(){
-        this.prev.removeEventListener('click', this.prevSlide.bind(this));
-        this.next.removeEventListener('click', this.nextSlide.bind(this));
+        this.prev.removeEventListener('click', this.psThis);
+        this.next.removeEventListener('click', this.nxThis);
+        this.wrapper.style.transform = `translateX(0)`;
         let style = document.getElementById('gloSliderStyle'+ this.rand);
-        style.remove();
+        if(style){
+            style.remove();
+        }
 
         this.removeGloClass();
     }

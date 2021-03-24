@@ -1,4 +1,5 @@
 import SliderCompany from "./lib/sliderCompany";
+import SliderForFuckingButtons from "./lib/sliderForFuckingButtons";
 
 const typesRepairTypes = () => {
     const tabItems = document.querySelectorAll('.types-repair-item');
@@ -10,9 +11,15 @@ const typesRepairTypes = () => {
         wrapper: '.types-repair1',
         slidesToShow: 1,
         arrowNext: '#repair-types-arrow_right',
-        arrowPrev: '#repair-types-arrow_left'
+        arrowPrev: '#repair-types-arrow_left',
+        progress: {
+            useProgress: true,
+            total: '.slider-counter-content__total',
+            current: '.slider-counter-content__current'
+        }
     });
-    sliderCompany.init();
+
+
 
     tabsWrapper.addEventListener('click', (e) => {
         let target = e.target;
@@ -29,17 +36,39 @@ const typesRepairTypes = () => {
                         slidesToShow: 1,
                         arrowNext: '#repair-types-arrow_right',
                         arrowPrev: '#repair-types-arrow_left',
-                        position: 0
+                        position: 0,
+                        progress: {
+                            useProgress: true,
+                            total: '.slider-counter-content__total',
+                            current: '.slider-counter-content__current'
+                        }
                     });
-                    console.log(item)
-                    console.log(index)
-                    sliderCompany.init();
+                    //sliderCompany.init();
                 } else {
                     tabItems[index].style.display = 'none';
                     item.classList.remove('active');
                 }
             });
         }
+    });
+    const sliderTabs = new SliderForFuckingButtons({
+        main: '.repair-types-nav',
+        wrapper: '.nav-list-repair',
+        slidesToShow: 3,
+        arrowPrev: '.nav-arrow_left',
+        arrowNext: '.nav-arrow_right',
+        maxWidth: 1024,
+        variableWidth: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                slidesToShow: 3,
+            },
+            {
+                breakpoint: 575,
+                slidesToShow: 1,
+            },
+        ]
     });
 };
 export default typesRepairTypes;
