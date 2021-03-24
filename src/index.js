@@ -8,6 +8,7 @@ import SliderCompany from "./modules/lib/sliderCompany";
 import formListener from "./modules/formListener";
 import iconHoverInit from "./modules/iconHoverInit";
 import typesRepairTypes from "./modules/typesRepairTypes";
+import transparensySlider from "./modules/transparensySlider";
 
 
 showPhone();
@@ -21,5 +22,5 @@ bindModal('.button_wide', '.popup-consultation');
 formListener();
 iconHoverInit();
 typesRepairTypes();
-
+transparensySlider();
 

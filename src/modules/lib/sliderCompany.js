@@ -36,6 +36,10 @@ class SliderCompany {
             this.maxWidth = maxWidth;
             this.addStyleDefault = addStyleDefault;
             if(this.maxWidth){
+                const windowWidth = document.documentElement.clientWidth;
+                if(windowWidth < this.maxWidth){
+                    this.init();
+                }
                 window.addEventListener('resize', () => {
                     const windowWidth = document.documentElement.clientWidth;
                     if(windowWidth < this.maxWidth){
@@ -156,6 +160,7 @@ class SliderCompany {
     }
 
     nextSlide() {
+        console.log('next')
         if (this.position + this.slidesToShow < this.slides.length) {
             this.wrapper.style.transform = `translateX(${-(++this.position * this.slideWidth)}%)`;
             if(this.progress.useProgress){
