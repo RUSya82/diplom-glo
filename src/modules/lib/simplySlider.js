@@ -8,30 +8,39 @@ class SimplySlider {
                     total = false,
                     current = false,
                     slideToShow = 1,
-                    hideArrows = false
+                    hideArrows = false,
+                    position = 0,
+                    connectionElements = false
                 }) {
         this.slider = document.querySelector(slider);
         this.wrapper = document.querySelector(wrapper);
         this.slides = [...document.querySelector(wrapper).children];
         this.arrowNext = document.querySelector(arrowNext);
         this.arrowPrev = document.querySelector(arrowPrev);
+        this.position = position;
         this.hideArrows = hideArrows;
         if(total){
             this.total = this.slider.querySelector(total);
         }
         if(current){
             this.current = this.slider.querySelector(current);
-            console.log(this.current)
         }
 
         this.currentSlide = 0;
         this.slideToShow = slideToShow;
+        if(connectionElements){
+            this.connectionElements = document.querySelectorAll(connectionElements);
+        }
     }
 
     init(){
         this.slides.forEach((item, index) => {
             if(index < this.slideToShow){
                 this.slides[index].classList.add('active');
+                if(this.connectionElements){
+                    this.connectionElements[index].classList.add('active');
+                }
+
             }
         });
         this.writeTotal();
@@ -54,6 +63,7 @@ class SimplySlider {
             this.current.textContent = `${this.currentSlide + 1}`;
         }
     }
+
 
 
     /**
@@ -93,8 +103,14 @@ class SimplySlider {
 
         if(this.checkNextSlide()){
             this.slides[this.currentSlide].classList.remove('active');
+            if(this.connectionElements) {
+                this.connectionElements[this.currentSlide].classList.remove('active');
+            }
             ++this.currentSlide;
             this.slides[this.currentSlide + this.slideToShow - 1].classList.add('active');
+            if(this.connectionElements) {
+                this.connectionElements[this.currentSlide + this.slideToShow - 1].classList.add('active');
+            }
             if(!this.checkNextSlide()){
                 this.hideNextArrow();
             }
@@ -106,9 +122,17 @@ class SimplySlider {
     prevSlide(){
         if(this.checkPrevSlide()){
             this.slides[this.currentSlide+ this.slideToShow - 1].classList.remove('active');
+            if(this.connectionElements) {
+                this.connectionElements[this.currentSlide+ this.slideToShow - 1].classList.remove('active');
+            }
+
             --this.currentSlide;
             this.checkSlideNumber();
             this.slides[this.currentSlide].classList.add('active');
+            if(this.connectionElements) {
+                this.connectionElements[this.currentSlide].classList.add('active');
+            }
+
             if(!this.checkPrevSlide()){
                 this.hidePrevArrow();
             }

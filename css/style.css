@@ -6379,9 +6379,13 @@ strong {
 
 @keyframes fade-tab {
   0% {
-    opacity: 0.3; }
+    opacity: 0.3;
+    transform: scaleX(0);
+  }
   100% {
-    opacity: 1; } }
+    opacity: 1;
+    transform: scaleX(1);
+  } }
 
 @-webkit-keyframes showMenu {
   0% {

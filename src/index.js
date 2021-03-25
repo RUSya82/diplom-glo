@@ -22,6 +22,7 @@ bindModal('.link-privacy', '.popup-privacy');
 bindModal('.link-list', '.popup-repair-types');
 bindModal('.button_wide', '.popup-consultation');
 bindModal('.transparency-item', '.popup-transparency', transparencyPopupSlider);
+// bindModal('.portfolio-popup-link', '.popup-portfolio');
 formListener();
 iconHoverInit();
 typesRepairTypes();

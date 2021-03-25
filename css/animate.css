@@ -72,6 +72,18 @@
     display: none;
     opacity: 0.3;
 }
+.popup-portfolio-slider__slide{
+    display: none;
+}
+.popup-portfolio-slider__slide.active{
+    display: block;
+}
+.popup-portfolio-text-wrapper{
+    height: 100%;
+}
+.popup-portfolio-text.active{
+    display: flex;
+}
 
 
 
