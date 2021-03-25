@@ -5938,7 +5938,7 @@ div.wave-block:nth-child(17):after {
     top: 41%; } }
 
 #portfolio-arrow_left {
-  display: none; }
+   }
   @media (max-width: 900px) {
     #portfolio-arrow_left {
       left: -50px; } }

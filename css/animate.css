@@ -53,6 +53,25 @@
 .popup-transparency-slider__slide.active{
     display: block !important;
 }
+#portfolio-arrow_left{
+    display: block;
+}
+.portfolio-big-slider{
+    opacity: 0.3 !important;
+    display: none;
+}
+.portfolio-big-slider.active{
+    opacity: 1 !important;
+    display: flex;
+}
+.portfolio-small-slider.active{
+    display: block;
+    opacity: 1;
+}
+.portfolio-small-slider{
+    display: none;
+    opacity: 0.3;
+}
 
 
 

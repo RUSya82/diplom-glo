@@ -1,5 +1,5 @@
 import SliderCompany from "./lib/sliderCompany";
-import SliderForFuckingButtons from "./lib/sliderForFuckingButtons";
+import SliderForButtons from "./lib/SliderForButtons";
 
 const typesRepairTypes = () => {
     const tabItems = document.querySelectorAll('.types-repair-item');
@@ -51,7 +51,7 @@ const typesRepairTypes = () => {
             });
         }
     });
-    const sliderTabs = new SliderForFuckingButtons({
+    const sliderTabs = new SliderForButtons({
         main: '.repair-types-nav',
         wrapper: '.nav-list-repair',
         slidesToShow: 3,

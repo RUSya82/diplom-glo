@@ -10,6 +10,7 @@ import iconHoverInit from "./modules/iconHoverInit";
 import typesRepairTypes from "./modules/typesRepairTypes";
 import transparensySlider from "./modules/transparensySlider";
 import transparencyPopupSlider from "./modules/transparencyPopupSlider";
+import portfolioSlider from "./modules/portfolioSlider";
 
 
 showPhone();
@@ -25,4 +26,4 @@ formListener();
 iconHoverInit();
 typesRepairTypes();
 transparensySlider();
-
+portfolioSlider();

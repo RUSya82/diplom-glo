@@ -1,4 +1,4 @@
-class SliderForFuckingButtons {
+class SliderForButtons {
     constructor(
         {
             main = '.glo-slider',
@@ -142,4 +142,4 @@ class SliderForFuckingButtons {
     }
 }
 
-export default SliderForFuckingButtons;
+export default SliderForButtons;

@@ -1,4 +1,3 @@
-import SliderCompany from "./lib/sliderCompany";
 
 const transparencyPopupSlider = () => {
     const slider = document.querySelector('.popup-transparency-slider');
@@ -10,8 +9,6 @@ const transparencyPopupSlider = () => {
     const current = wrap.querySelector('.slider-counter-content__current');
     let currentSlide = 0;
 
-    console.log(total)
-    console.log(current)
     slides[currentSlide].classList.add('active');
     total.textContent = `${slides.length}`;
     current.textContent = `${currentSlide + 1}`;

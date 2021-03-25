@@ -9,6 +9,5 @@ const  transparensySlider = () => {
         arrowNext: '.transparency-slider-wrap .slider-arrow_right',
         maxWidth: 1024,
     });
-    console.log(document.querySelector('.transparency-slider-wrap .slider-arrow_left'));
 };
 export default transparensySlider;
