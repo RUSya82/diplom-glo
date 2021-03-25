@@ -58,6 +58,9 @@
         flex-wrap: nowrap;
     }
 }
+.popup{
+    overflow: auto;
+}
 .popup-transparency-slider__slide{
     display: none !important;
 }

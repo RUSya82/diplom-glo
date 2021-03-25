@@ -6038,7 +6038,9 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 1024px) and (min-width: 576px) {
     .popup-portfolio-text {
         width: 100%;
-        height: 293px
+        height: 293px;
+        flex-direction: row;
+        justify-content: space-around;
     }
 }
 
