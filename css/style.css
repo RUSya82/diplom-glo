@@ -800,8 +800,8 @@ template, [hidden] {
             font-size: 20px;
             font-weight: 900; }
             @media (max-width: 1024px) {
-              .formula-slider__slide .formula-item__icon-inner {
-                background: none; } }
+              .formula-slider__slide .formula-item__icon-inner {}
+                /*background: none; } }*/
           .formula-slider__slide .formula-item__icon__descr {
             font-size: 18px; }
     @media (max-width: 575px) {
@@ -2004,20 +2004,20 @@ div.wave-block:nth-child(17):after {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    max-width: 340px;
+    /*max-width: 340px;*/
     text-align: center;
     color: #322823;
     -webkit-transition: 0.2s;
     transition: 0.2s; }
-    @media (max-width: 1228px) {
-      .problems-item {
-        max-width: 240px; } }
-    @media (max-width: 1050px) {
-      .problems-item {
-        max-width: 220px; } }
-    @media (max-width: 1024px) {
-      .problems-item {
-        max-width: 340px; } }
+    /*@media (max-width: 1228px) {*/
+    /*  .problems-item {*/
+    /*    max-width: 240px; } }*/
+    /*@media (max-width: 1050px) {*/
+    /*  .problems-item {*/
+    /*    max-width: 220px; } }*/
+    /*@media (max-width: 1024px) {*/
+    /*  .problems-item {*/
+    /*    max-width: 340px; } }*/
     .problems-item__title {
       width: 260px;
       margin-top: 8px;
@@ -5900,6 +5900,7 @@ div.wave-block:nth-child(17):after {
       visibility: visible;
       opacity: 1; } }
 
+
 #designs > .wrapper > div.preview-block.visible > .preview-block__item > .preview-block__item-inner.preview_active {
   color: #ffffff; }
   #designs > .wrapper > div.preview-block.visible > .preview-block__item > .preview-block__item-inner.preview_active ~ img {
@@ -5937,8 +5938,7 @@ div.wave-block:nth-child(17):after {
   #repair-types-arrow_left, #repair-types-arrow_right {
     top: 41%; } }
 
-#portfolio-arrow_left {
-   }
+
   @media (max-width: 900px) {
     #portfolio-arrow_left {
       left: -50px; } }

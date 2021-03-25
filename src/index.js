@@ -24,7 +24,53 @@ bindModal('.button_wide', '.popup-consultation');
 bindModal('.transparency-item', '.popup-transparency', transparencyPopupSlider);
 // bindModal('.portfolio-popup-link', '.popup-portfolio');
 formListener();
-iconHoverInit();
+iconHoverInit({
+    icon: '.formula-item__icon',
+    item: '.formula-item',
+    popup: '.formula-item-popup'});
+iconHoverInit({
+    icon: '.problems-item__icon',
+    item: '.problems-item',
+    popup: '.problems-item-popup'});
 typesRepairTypes();
 transparensySlider();
 portfolioSlider();
+
+const formulaSlider = new SliderCompany({
+    main: '.formula-slider-wrap',
+    wrapper: '.formula-slider',
+    slidesToShow: 3,
+    arrowPrev: '#formula-arrow_left',
+    arrowNext: '#formula-arrow_right',
+    maxWidth: 1024,
+    useOverflow: false,
+    responsive: [
+        {
+            breakpoint: 1024,
+            slidesToShow: 3,
+        },
+        {
+            breakpoint: 767,
+            slidesToShow: 1,
+        },
+    ]
+});
+const problemsSlider = new SliderCompany({
+    main: '.problems-slider-wrap',
+    wrapper: '.problems-slider',
+    slidesToShow: 1,
+    arrowPrev: '#problems-arrow_left',
+    arrowNext: '#problems-arrow_right',
+    maxWidth: 1024,
+    useOverflow: false,
+    // responsive: [
+    //     {
+    //         breakpoint: 1024,
+    //         slidesToShow: 3,
+    //     },
+    //     {
+    //         breakpoint: 767,
+    //         slidesToShow: 1,
+    //     },
+    // ]
+});

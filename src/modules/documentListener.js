@@ -6,6 +6,7 @@ import popupCLose from "./popupClose";
 const documentListener = () => {
     document.addEventListener('click', (e) => {
         const target = e.target;                //куда кликнули
+        // console.log(target)
         const popup = target.closest('.popup');
         if (popup) {
             const popupContent = target.closest('.popup-content');

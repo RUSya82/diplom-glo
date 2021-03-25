@@ -13,6 +13,7 @@ class SliderCompany {
             },
             maxWidth = false,
             addStyleDefault = true,
+            useOverflow = true
 
         }) {
         try {
@@ -50,6 +51,11 @@ class SliderCompany {
                 });
             }else {
                 this.init();
+            }
+            if(useOverflow){
+                this.hiddenStr = 'overflow: hidden !important;'
+            }else {
+                this.hiddenStr = '';
             }
         } catch (e) {
             console.error(e);
@@ -139,7 +145,7 @@ class SliderCompany {
         }
         style.textContent = `
             .glo-slider${this.rand}{
-                overflow: hidden !important;
+                ${this.hiddenStr}
             }
             .glo-slider__wrapper${this.rand}{
                 display: flex;
