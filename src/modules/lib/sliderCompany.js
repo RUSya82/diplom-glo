@@ -14,6 +14,7 @@ class SliderCompany {
             maxWidth = false,
             addStyleDefault = true,
             useOverflow = true,
+            infinity = false,
             preview = {
                 usePreview: false,
                 previewContainer: '',
@@ -43,6 +44,7 @@ class SliderCompany {
             this.addStyleDefault = addStyleDefault;
             this.useOverflow = useOverflow;
             this.preview = preview;
+            this.infinity = infinity;
             if(this.maxWidth){
                 const windowWidth = document.documentElement.clientWidth;
                 if(windowWidth < this.maxWidth){
@@ -218,6 +220,10 @@ class SliderCompany {
             this.wrapper.style.transform = `translateX(${-(++this.position * this.slideWidth)}%)`;
             if(this.progress.useProgress){
                 this.setCurrentField();
+            }
+        } else {
+            if(this.infinity){
+                this.goToPosition(0);
             }
         }
     }

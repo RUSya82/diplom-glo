@@ -13,7 +13,6 @@ const bindModal = (linksSelector, modalSelector, callback, ...args) => {
     if(links.length > 0){
         links.forEach( item => {
             item.addEventListener('click', (e) => {
-                console.log()
                 e.preventDefault();
                 popupOpen(modal,callback, ...args);
             });

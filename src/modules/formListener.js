@@ -1,5 +1,6 @@
 import Validator from "./lib/validator";
 import popupOpen from "./popupOpen";
+import closePopupTimer from "./lib/closePopupTimer";
 const formListener = () => {
     /**
      * загоняем наши формы в валидатор
@@ -30,7 +31,7 @@ const formListener = () => {
                         if (response.status !== 200) {
                             throw new Error('status not 200');
                         } else {
-                            popupOpen(popupThanks);
+                            popupOpen(popupThanks, closePopupTimer, popupThanks, 3000);
                         }
                     })
                     .then(() => {

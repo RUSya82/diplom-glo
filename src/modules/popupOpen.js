@@ -2,6 +2,7 @@ import popupCLose from "./popupClose";
 import toggleLockBody from "./toggleLockBody";
 
 const popupOpen = (popup, callback, ...args) => {
+    console.log()
     const popupOpened = document.querySelectorAll('.popup.open');
     if(popupOpened.length > 0){
         popupOpened.forEach(item => popupCLose(item));
@@ -11,7 +12,7 @@ const popupOpen = (popup, callback, ...args) => {
     toggleLockBody();
 
     if(callback){
-        callback();
+        callback(...args);
     }
 };
 export default popupOpen;

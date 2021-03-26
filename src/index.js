@@ -27,6 +27,7 @@ bindModal('.link-privacy', '.popup-privacy');
 bindModal('.link-list', '.popup-repair-types');
 bindModal('.button_wide', '.popup-consultation');
 bindModal('.transparency-item', '.popup-transparency', transparencyPopupSlider);
+bindModal('.link-list-designs', '.popup.popup-design');
 // bindModal('.portfolio-popup-link', '.popup-portfolio');
 formListener();
 iconHoverInit({
@@ -117,6 +118,7 @@ const partnersSlider = new SliderCompany({
     slidesToShow: 3,
     arrowPrev: '#partners-arrow_left',
     arrowNext: '#partners-arrow_right',
+    infinity: true,
     // useOverflow: false,
     responsive: [
         {

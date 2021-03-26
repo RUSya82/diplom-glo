@@ -1,6 +1,4 @@
-//'.formula-item__icon'
-//'.formula-item'
-//'.formula-item-popup'
+
 const iconHoverInit = ({
             icon,
             item,
@@ -9,15 +7,25 @@ const iconHoverInit = ({
     const icons = document.querySelectorAll(icon);
     const items = document.querySelectorAll(item);
 
+
     const showIconPopup = (e) => {
         const element = e.target;
         const parent = element.closest(item);
         let iconPopup = element.querySelector(popup);
         const top = iconPopup.getBoundingClientRect().top;
         const bottom = iconPopup.getBoundingClientRect().bottom;
+        items.forEach(item => {
+            if(item.classList.contains('active-item')){
+                item.classList.remove('active-item');
+            }
+        });
         parent.style.opacity = '1';
+        const width = document.documentElement.clientWidth;
         if(top < 0 || bottom > document.documentElement.clientHeight){
-            iconPopup.classList.add('popup-reverted');
+            if(width > 575){
+                iconPopup.classList.add('popup-reverted');
+            }
+
         }
         parent.classList.add('active-item');
         parent.style.zIndex = '111';
@@ -40,8 +48,19 @@ const iconHoverInit = ({
         parent.style.opacity = '0.4'
 
     }
+    const toggleIconPopup = (e) => {
+        const element = e.target;
+        const iconPopup = element.querySelectorAll(popup);
+        const parent = element.closest(item);
+        console.log(parent)
+        if(parent.classList.contains('active-item')){
+            closeIconPopup(e);
+        } else {
+            showIconPopup(e);
+        }
+    };
     icons.forEach((item) => {
-        item.addEventListener('mouseenter', showIconPopup);
+        item.addEventListener('mouseenter', toggleIconPopup);
     });
 
     icons.forEach((item) => {
