@@ -14,6 +14,7 @@ import portfolioSlider from "./modules/portfolioSlider";
 import reviewsSliderInit from "./modules/reviewSliderInit";
 import shemeButtonSliderInit from "./modules/shemeButtonSliderInit";
 import SliderForButtons from "./modules/lib/sliderForButtons";
+import accordion from "./modules/accordion";
 
 
 showPhone();
@@ -40,6 +41,7 @@ transparensySlider();
 portfolioSlider();
 reviewsSliderInit();
 shemeButtonSliderInit();
+accordion();
 
 const formulaSlider = new SliderCompany({
     main: '.formula-slider-wrap',
@@ -103,6 +105,24 @@ const sliderTabs = new SliderForButtons({
         },
         {
             breakpoint: 575,
+            slidesToShow: 1,
+        },
+    ]
+});
+const partnersSlider = new SliderCompany({
+    main: '#partners .wrapper',
+    wrapper: '.partners-slider',
+    slidesToShow: 3,
+    arrowPrev: '#partners-arrow_left',
+    arrowNext: '#partners-arrow_right',
+    // useOverflow: false,
+    responsive: [
+        {
+            breakpoint: 1024,
+            slidesToShow: 3,
+        },
+        {
+            breakpoint: 767,
             slidesToShow: 1,
         },
     ]

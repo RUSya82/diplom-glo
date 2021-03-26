@@ -1,4 +1,5 @@
 import Validator from "./lib/validator";
+import popupOpen from "./popupOpen";
 const formListener = () => {
     /**
      * загоняем наши формы в валидатор
@@ -6,6 +7,7 @@ const formListener = () => {
      */
     const feedbackBlockForms = document.querySelectorAll('.feedback-block__form');
     const feedbackForms = document.querySelectorAll('.feedback__form');
+    const popupThanks = document.querySelector('.popup.popup-thank');
 
 
     const sendForm = (form, validObject) => {
@@ -27,6 +29,8 @@ const formListener = () => {
                     .then((response) => {
                         if (response.status !== 200) {
                             throw new Error('status not 200');
+                        } else {
+                            popupOpen(popupThanks);
                         }
                     })
                     .then(() => {

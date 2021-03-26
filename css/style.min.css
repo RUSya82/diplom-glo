@@ -1264,7 +1264,7 @@ summary {
         padding: 20px 18px 0;
         text-align: center;
         font-size: 12px;
-        top: 100px;
+        top: 60px;
         line-height: 20px
     }
 
@@ -4534,7 +4534,7 @@ div.wave-block:nth-child(17):after {
 }
 
 .partners-slider {
-    margin-top: 83px;
+    margin-top: 20px;
     -webkit-transition: 1s;
     transition: 1s
 }
@@ -4560,7 +4560,7 @@ div.wave-block:nth-child(17):after {
 
     .partners-slider {
         min-height: 105px;
-        margin-top: 50px
+        margin-top: 20px
     }
 }
 
@@ -4616,7 +4616,7 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 1024px) {
     .partners-slider__slide {
-        max-width: 114px;
+        /*max-width: 114px;*/
         min-height: auto
     }
 
@@ -4638,7 +4638,7 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 575px) {
     .partners-slider__slide {
-        max-width: 134px;
+        /*max-width: 134px;*/
         min-height: auto
     }
 
