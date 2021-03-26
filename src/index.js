@@ -15,6 +15,7 @@ import reviewsSliderInit from "./modules/reviewSliderInit";
 import shemeButtonSliderInit from "./modules/shemeButtonSliderInit";
 import SliderForButtons from "./modules/lib/sliderForButtons";
 import accordion from "./modules/accordion";
+import designTabsInit from "./modules/designTabsInit";
 
 
 showPhone();
@@ -42,6 +43,7 @@ portfolioSlider();
 reviewsSliderInit();
 shemeButtonSliderInit();
 accordion();
+designTabsInit();
 
 const formulaSlider = new SliderCompany({
     main: '.formula-slider-wrap',
@@ -127,3 +129,5 @@ const partnersSlider = new SliderCompany({
         },
     ]
 });
+
+
