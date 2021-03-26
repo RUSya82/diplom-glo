@@ -11,6 +11,9 @@ import typesRepairTypes from "./modules/typesRepairTypes";
 import transparensySlider from "./modules/transparensySlider";
 import transparencyPopupSlider from "./modules/transparencyPopupSlider";
 import portfolioSlider from "./modules/portfolioSlider";
+import reviewsSliderInit from "./modules/reviewSliderInit";
+import shemeButtonSliderInit from "./modules/shemeButtonSliderInit";
+import SliderForButtons from "./modules/lib/sliderForButtons";
 
 
 showPhone();
@@ -35,6 +38,8 @@ iconHoverInit({
 typesRepairTypes();
 transparensySlider();
 portfolioSlider();
+reviewsSliderInit();
+shemeButtonSliderInit();
 
 const formulaSlider = new SliderCompany({
     main: '.formula-slider-wrap',
@@ -62,15 +67,43 @@ const problemsSlider = new SliderCompany({
     arrowPrev: '#problems-arrow_left',
     arrowNext: '#problems-arrow_right',
     maxWidth: 1024,
-    useOverflow: false,
-    // responsive: [
-    //     {
-    //         breakpoint: 1024,
-    //         slidesToShow: 3,
-    //     },
-    //     {
-    //         breakpoint: 767,
-    //         slidesToShow: 1,
-    //     },
-    // ]
+    useOverflow: false
+});
+const shemeButtonSlider = new SliderForButtons({
+    main: '.sheme-button-slider',
+    wrapper: '#scheme-list',
+    slidesToShow: 3,
+    arrowPrev: '#nav-arrow-scheme_left',
+    arrowNext: '#nav-arrow-scheme_right',
+    maxWidth: 1024,
+    variableWidth: true,
+    responsive: [
+        {
+            breakpoint: 1024,
+            slidesToShow: 3,
+        },
+        {
+            breakpoint: 575,
+            slidesToShow: 1,
+        },
+    ]
+});
+const sliderTabs = new SliderForButtons({
+    main: '.repair-types-nav',
+    wrapper: '.nav-list-repair',
+    slidesToShow: 3,
+    arrowPrev: '.nav-arrow_left',
+    arrowNext: '.nav-arrow_right',
+    maxWidth: 1024,
+    variableWidth: true,
+    responsive: [
+        {
+            breakpoint: 1024,
+            slidesToShow: 3,
+        },
+        {
+            breakpoint: 575,
+            slidesToShow: 1,
+        },
+    ]
 });

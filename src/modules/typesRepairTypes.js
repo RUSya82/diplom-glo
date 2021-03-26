@@ -1,5 +1,4 @@
 import SliderCompany from "./lib/sliderCompany";
-import SliderForButtons from "./lib/SliderForButtons";
 
 const typesRepairTypes = () => {
     const tabItems = document.querySelectorAll('.types-repair-item');
@@ -51,24 +50,6 @@ const typesRepairTypes = () => {
             });
         }
     });
-    const sliderTabs = new SliderForButtons({
-        main: '.repair-types-nav',
-        wrapper: '.nav-list-repair',
-        slidesToShow: 3,
-        arrowPrev: '.nav-arrow_left',
-        arrowNext: '.nav-arrow_right',
-        maxWidth: 1024,
-        variableWidth: true,
-        responsive: [
-            {
-                breakpoint: 1024,
-                slidesToShow: 3,
-            },
-            {
-                breakpoint: 575,
-                slidesToShow: 1,
-            },
-        ]
-    });
+
 };
 export default typesRepairTypes;

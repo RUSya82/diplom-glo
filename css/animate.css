@@ -128,6 +128,12 @@
 #problems-arrow_left{
     margin-top: 0;
 }
+.reviews-slider__slide{
+    display: none;
+}
+.reviews-slider__slide.active{
+    display: flex;
+}
 
 
 

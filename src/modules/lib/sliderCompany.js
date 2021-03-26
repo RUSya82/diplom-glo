@@ -36,6 +36,7 @@ class SliderCompany {
             this.nxThis = this.nextSlide.bind(this);
             this.maxWidth = maxWidth;
             this.addStyleDefault = addStyleDefault;
+            this.useOverflow = useOverflow;
             if(this.maxWidth){
                 const windowWidth = document.documentElement.clientWidth;
                 if(windowWidth < this.maxWidth){
@@ -52,11 +53,7 @@ class SliderCompany {
             }else {
                 this.init();
             }
-            if(useOverflow){
-                this.hiddenStr = 'overflow: hidden !important;'
-            }else {
-                this.hiddenStr = '';
-            }
+
         } catch (e) {
             console.error(e);
         }
@@ -143,10 +140,15 @@ class SliderCompany {
             style = document.createElement('style');
             style.id = 'gloSliderStyle' + this.rand;
         }
-        style.textContent = `
+        let styleString = '';
+        if(this.useOverflow){
+            styleString += `
             .glo-slider${this.rand}{
-                ${this.hiddenStr}
+                overflow: hidden;
             }
+            `
+        }
+        styleString += `
             .glo-slider__wrapper${this.rand}{
                 display: flex;
                 flex-wrap: nowrap;
@@ -161,7 +163,8 @@ class SliderCompany {
                 justify-content: center !important;;
                 margin: auto 0 !important;
             }
-        `;
+        `
+        style.textContent = styleString;
         document.head.appendChild(style);
     }
 
