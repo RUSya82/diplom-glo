@@ -40,6 +40,7 @@ class SliderCompany {
             this.progress = progress;
             this.psThis = this.prevSlide.bind(this);
             this.nxThis = this.nextSlide.bind(this);
+            this.previewListenerBind = this.previewListenerFunction.bind(this);
             this.maxWidth = maxWidth;
             this.addStyleDefault = addStyleDefault;
             this.useOverflow = useOverflow;
@@ -79,6 +80,10 @@ class SliderCompany {
         if(!this.next && !this.prev){
             this.addArrows();
         }
+        if(this.preview.usePreview){
+            this.previewContainer = document.querySelector(this.preview.previewContainer);
+            this.renderPreview();
+        }
         this.addControls();
         if (this.responsive.length !== 0) {
             this.responsiveInit();
@@ -93,19 +98,13 @@ class SliderCompany {
                 this.setCurrentField();
             }
         }
-        if(this.preview.usePreview){
-            this.renderPreview();
-        }
+
+        this.goToPosition(0);
 
     }
     //preview-block__item-inner scand preview_active
     renderPreview(){
-        const container = document.querySelector(this.preview.previewContainer);
-        container.innerHTML = '';
-        const str = `<div class="preview-block__item">
-                        <div class="preview-block__item-inner scand preview_active">Интерьер 1</div>
-                        <img src="./images/designs/item1_preview.jpg" alt="">
-                    </div>`;
+        this.previewContainer.innerHTML = '';
         try{
             this.slides.forEach((item, index) => {
                 const imgSrc = item.querySelector('img').getAttribute('src');
@@ -113,7 +112,7 @@ class SliderCompany {
                                         <div class="preview-block__item-inner scand ${this.position === index ? 'preview_active' : ''}">Интерьер ${index}</div>
                                         <img src="${imgSrc}" alt="" style="width: 100%; height: 100%">
                                     </div>`;
-                container.insertAdjacentHTML('beforeend', itemAppend);
+                this.previewContainer.insertAdjacentHTML('beforeend', itemAppend);
             })
         }catch (e) {
             console.error(e);
@@ -282,20 +281,32 @@ class SliderCompany {
         this.prev.addEventListener('click', this.psThis);
         this.next.addEventListener('click', this.nxThis);
         if(this.preview.usePreview){
-            const container = document.querySelector(this.preview.previewContainer);
-            container.addEventListener('click', (e) => {
-                const target = e.target.closest(`.${this.preview.previewItemClass}`);
-                if(target){
-                    const index = +target.dataset.index;
-                    this.goToPosition(index);
-                }
-            });
+            this.previewContainer.addEventListener('click', this.previewListenerBind);
         }
     }
+    previewListenerFunction(e){
+        const target = e.target.closest(`.${this.preview.previewItemClass}`);
+        if(target){
+            const index = +target.dataset.index;
+            const itemInners = document.querySelectorAll('.preview-block__item-inner');
+            itemInners.forEach(item => {
+                if(item.classList.contains('preview_active')) {
+                    item.classList.remove('preview_active');
+                }
+            });
+            const itemInner = target.querySelector('.preview-block__item-inner');
+            itemInner.classList.add('preview_active');
+            this.goToPosition(index);
+        }
+    }
+
     deInit(){
         this.prev.removeEventListener('click', this.psThis);
         this.next.removeEventListener('click', this.nxThis);
-        this.wrapper.style.transform = `translateX(0)`;
+        if(this.preview.usePreview){
+            this.previewContainer.removeEventListener('click', this.previewListenerBind);
+        }
+        this.goToPosition(0);
         let style = document.getElementById('gloSliderStyle'+ this.rand);
         if(style){
             style.remove();
