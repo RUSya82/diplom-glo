@@ -13,7 +13,12 @@ class SliderCompany {
             },
             maxWidth = false,
             addStyleDefault = true,
-            useOverflow = true
+            useOverflow = true,
+            preview = {
+                usePreview: false,
+                previewContainer: '',
+                previewItemClass: ''
+            }
 
         }) {
         try {
@@ -37,6 +42,7 @@ class SliderCompany {
             this.maxWidth = maxWidth;
             this.addStyleDefault = addStyleDefault;
             this.useOverflow = useOverflow;
+            this.preview = preview;
             if(this.maxWidth){
                 const windowWidth = document.documentElement.clientWidth;
                 if(windowWidth < this.maxWidth){
@@ -53,6 +59,7 @@ class SliderCompany {
             }else {
                 this.init();
             }
+
 
         } catch (e) {
             console.error(e);
@@ -83,6 +90,31 @@ class SliderCompany {
                 this.setTotalField();
                 this.setCurrentField();
             }
+        }
+        if(this.preview.usePreview){
+            this.renderPreview();
+        }
+
+    }
+    //preview-block__item-inner scand preview_active
+    renderPreview(){
+        const container = document.querySelector(this.preview.previewContainer);
+        container.innerHTML = '';
+        const str = `<div class="preview-block__item">
+                        <div class="preview-block__item-inner scand preview_active">Интерьер 1</div>
+                        <img src="./images/designs/item1_preview.jpg" alt="">
+                    </div>`;
+        try{
+            this.slides.forEach((item, index) => {
+                const imgSrc = item.querySelector('img').getAttribute('src');
+                const itemAppend = `<div class="${this.preview.previewItemClass}" data-index="${index}">
+                                        <div class="preview-block__item-inner scand ${this.position === index ? 'preview_active' : ''}">Интерьер ${index}</div>
+                                        <img src="${imgSrc}" alt="" style="width: 100%; height: 100%">
+                                    </div>`;
+                container.insertAdjacentHTML('beforeend', itemAppend);
+            })
+        }catch (e) {
+            console.error(e);
         }
     }
 
@@ -168,6 +200,19 @@ class SliderCompany {
         document.head.appendChild(style);
     }
 
+    goToPosition(position){
+        if(position >= 0 && position < this.slides.length){
+            if(position > this.position){
+                this.position = position - 1;
+                this.nextSlide();
+            } else if( position <  this.position){
+                this.position = position + 1;
+                this.prevSlide();
+            }
+        }
+
+    }
+
     nextSlide() {
         if (this.position + this.slidesToShow < this.slides.length) {
             this.wrapper.style.transform = `translateX(${-(++this.position * this.slideWidth)}%)`;
@@ -230,6 +275,16 @@ class SliderCompany {
     addControls() {
         this.prev.addEventListener('click', this.psThis);
         this.next.addEventListener('click', this.nxThis);
+        if(this.preview.usePreview){
+            const container = document.querySelector(this.preview.previewContainer);
+            container.addEventListener('click', (e) => {
+                const target = e.target.closest(`.${this.preview.previewItemClass}`);
+                if(target){
+                    const index = +target.dataset.index;
+                    this.goToPosition(index);
+                }
+            });
+        }
     }
     deInit(){
         this.prev.removeEventListener('click', this.psThis);

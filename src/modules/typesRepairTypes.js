@@ -15,6 +15,9 @@ const typesRepairTypes = () => {
             useProgress: true,
             total: '.slider-counter-content__total',
             current: '.slider-counter-content__current'
+        },
+        preview: {
+            usePreview: false,
         }
     });
 

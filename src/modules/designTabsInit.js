@@ -18,6 +18,11 @@ const designTabsInit = () => {
             useProgress: true,
             total: '#designs .slider-counter-content__total',
             current: '#designs .slider-counter-content__current'
+        },
+        preview: {
+            usePreview: true,
+            previewContainer: '#designs .preview-block',
+            previewItemClass: 'preview-block__item'
         }
     });
 
@@ -40,6 +45,11 @@ const designTabsInit = () => {
                             useProgress: true,
                             total: '#designs .slider-counter-content__total',
                             current: '#designs .slider-counter-content__current'
+                        },
+                        preview: {
+                            usePreview: true,
+                            previewContainer: '#designs .preview-block',
+                            previewItemClass: 'preview-block__item'
                         }
                     });
                     //sliderCompany.init();
