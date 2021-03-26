@@ -1244,7 +1244,7 @@ summary {
 @media (max-width: 1024px) {
     .formula-item-popup {
         padding-top: 35px;
-        top: 155px
+        top: 100px
     }
 
     .formula-item-popup:before {
@@ -2648,7 +2648,7 @@ div.wave-block:nth-child(17):after {
     }
 
     .problems-slider-wrap {
-        margin-top: 50px
+        margin-top: 0
     }
 }
 
@@ -2835,7 +2835,7 @@ div.wave-block:nth-child(17):after {
 @media (max-width: 1024px) {
     .problems-item-popup {
         padding-top: 35px;
-        top: 245px
+        top: 60px
     }
 
     .problems-item-popup:before {
@@ -2850,7 +2850,7 @@ div.wave-block:nth-child(17):after {
         max-width: 290px;
         padding: 44px 18px 0;
         font-size: 12px;
-        top: 190px
+        top: 60px
     }
 
     .problems-item-popup:before {
@@ -2863,12 +2863,12 @@ div.wave-block:nth-child(17):after {
 .problems-item-popup-1 {
     min-height: 344px;
     padding-top: 35px;
-    top: 245px
+    /*top: 245px*/
 }
 
 @media (min-width: 1025px) {
     .problems-item-popup-1 {
-        top: 140px
+        top: 100px
     }
 }
 
@@ -2891,7 +2891,7 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 575px) {
     .problems-item-popup-1 {
-        top: 190px
+        top: 60px
     }
 
     .problems-item-popup-1:before {
@@ -8255,12 +8255,12 @@ strong {
 
     #problems-arrow_left {
         left: 0;
-        top: 45%
+        top: 50%
     }
 
     #problems-arrow_right {
         right: 0;
-        top: 45%
+        top: 50%
     }
 
     #partners-arrow_left {
