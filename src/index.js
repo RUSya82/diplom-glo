@@ -18,6 +18,7 @@ import accordion from "./modules/accordion";
 import designTabsInit from "./modules/designTabsInit";
 import designPopupInit from "./modules/designPopupInit";
 import GetDataForModal from "./modules/getDataForModal";
+import serviceSlider from "./modules/serviceSlider";
 
 
 showPhone();
@@ -47,6 +48,7 @@ reviewsSliderInit();
 shemeButtonSliderInit();
 accordion();
 designTabsInit();
+serviceSlider();
 // designPopupInit();
 
 const formulaSlider = new SliderCompany({

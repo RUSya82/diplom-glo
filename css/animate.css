@@ -94,12 +94,18 @@
     }
 
 }
+#services-arrow_right, #services-arrow_left{
+    display: none;
+}
 @media (max-width: 575px){
     .formula-item-popup{
         top: 60px;
     }
     .problems-item{
         margin-top: -300px;
+    }
+    #services-arrow_right, #services-arrow_left{
+        display: block;
     }
 }
 @media (max-width: 1024px) {
@@ -206,6 +212,13 @@
 .popup-repair-types-nav__item.active{
     border: 2px solid orange !important;
 }
+.services-slider__slide.services-item{
+    display: none;
+}
+.services-slider__slide.services-item.active {
+    display: flex;
+}
+
 
 
 
