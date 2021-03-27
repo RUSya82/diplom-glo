@@ -17,6 +17,7 @@ import SliderForButtons from "./modules/lib/sliderForButtons";
 import accordion from "./modules/accordion";
 import designTabsInit from "./modules/designTabsInit";
 import designPopupInit from "./modules/designPopupInit";
+import GetDataForModal from "./modules/getDataForModal";
 
 
 showPhone();
@@ -115,5 +116,8 @@ const partnersSlider = new SliderCompany({
         },
     ]
 });
+
+const resp = new GetDataForModal('./db/db.json');
+resp.init();
 
 

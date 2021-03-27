@@ -7124,7 +7124,7 @@ div.wave-block:nth-child(17):after {
 
 .nav-popup-repair-types {
     position: relative;
-    margin-top: 0 !important
+    /*margin-top: 0 !important*/
 }
 
 @media (min-width: 1025px) {
@@ -7188,6 +7188,9 @@ div.wave-block:nth-child(17):after {
         flex-wrap: wrap;
         max-width: 100%
     }
+    .nav-popup{
+        margin-top: 24px !important;
+    }
 }
 
 @media (max-width: 575px) {
@@ -7204,12 +7207,12 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 1024px) {
     .nav-list-popup-repair {
-        min-width: 3130px;
+        min-width: 1900px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
         max-width: 100%
     }
 }
@@ -8462,12 +8465,12 @@ strong {
     .mobile-row td:nth-child(2), .mobile-row td:nth-child(3), .mobile-row td:nth-child(4) {
         width: 50%;
         text-align: center;
-        display: none
+        /*display: none*/
     }
 
     .mobile-row td:nth-child(5) {
         width: 50%;
-        display: none
+        /*display: none*/
     }
 
     .showHide {

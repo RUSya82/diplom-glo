@@ -92,6 +92,7 @@
     .problems-item{
         margin-top: -380px;
     }
+
 }
 @media (max-width: 575px){
     .formula-item-popup{
@@ -195,6 +196,15 @@
 }
 #partners .slider-arrow{
     top: 60%;
+}
+.popup-repair-types-content-table__list{
+    display: none;
+}
+.popup-repair-types-content-table__list.active{
+    display: table;
+}
+.popup-repair-types-nav__item.active{
+    border: 2px solid orange !important;
 }
 
 
