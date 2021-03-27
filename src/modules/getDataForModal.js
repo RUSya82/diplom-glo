@@ -119,7 +119,6 @@ class GetDataForModal {
                 },
             ]
         });
-        console.log(buttonSlider)
     }
 }
 export default GetDataForModal;
