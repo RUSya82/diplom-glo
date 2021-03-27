@@ -87,12 +87,18 @@
         transform: rotate(0deg);
     }
     .problems-item-popup{
-        top: 100px;
+        top: 260px;
+    }
+    .problems-item{
+        margin-top: -380px;
     }
 }
 @media (max-width: 575px){
     .formula-item-popup{
         top: 60px;
+    }
+    .problems-item{
+        margin-top: -300px;
     }
 }
 @media (max-width: 1024px) {

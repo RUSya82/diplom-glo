@@ -1,5 +1,5 @@
-import toggleLockBody from "./toggleLockBody";
-import toggleMenu from "./toggleMenu";
+import toggleLockBody from "../toggleLockBody";
+import toggleMenu from "../toggleMenu";
 const popupCLose = (popup, callback) => {
     const activeMenu = document.querySelector('.popup-dialog-menu.active');
     if(activeMenu){

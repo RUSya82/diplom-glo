@@ -1,8 +1,7 @@
-import togglePopup from "./togglePopup";
 import scrollToElement from "./lib/scrollToElement";
 import toggleMenu from "./toggleMenu";
-import popupOpen from "./popupOpen";
-import popupCLose from "./popupClose";
+import popupOpen from "./lib/popupOpen";
+import popupCLose from "./lib/popupClose";
 
 const menuInit = () => {
     const menuIcons = document.querySelectorAll('.menu__icon');

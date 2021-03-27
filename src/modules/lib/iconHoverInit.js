@@ -22,7 +22,7 @@ const iconHoverInit = ({
         parent.style.opacity = '1';
         const width = document.documentElement.clientWidth;
         if(top < 0 || bottom > document.documentElement.clientHeight){
-            if(width > 575){
+            if(width > 1024){
                 iconPopup.classList.add('popup-reverted');
             }
 
@@ -52,7 +52,6 @@ const iconHoverInit = ({
         const element = e.target;
         const iconPopup = element.querySelectorAll(popup);
         const parent = element.closest(item);
-        console.log(parent)
         if(parent.classList.contains('active-item')){
             closeIconPopup(e);
         } else {

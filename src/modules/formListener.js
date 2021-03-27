@@ -1,5 +1,5 @@
 import Validator from "./lib/validator";
-import popupOpen from "./popupOpen";
+import popupOpen from "./lib/popupOpen";
 import closePopupTimer from "./lib/closePopupTimer";
 const formListener = () => {
     /**

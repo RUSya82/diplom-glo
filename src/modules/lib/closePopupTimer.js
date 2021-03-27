@@ -1,4 +1,4 @@
-import popupCLose from "../popupClose";
+import popupCLose from "./popupClose";
 
 const closePopupTimer = (popup, time) => {
     setTimeout(popupCLose, time, popup);

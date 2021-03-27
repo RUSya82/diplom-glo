@@ -1,5 +1,5 @@
 import SimplySlider from "./lib/simplySlider";
-import popupOpen from "./popupOpen";
+import popupOpen from "./lib/popupOpen";
 
 const portfolioSlider = () => {
     const portfolioSliderInit = new SimplySlider({

@@ -193,8 +193,8 @@ class SliderCompany {
                 flex: 0 0 ${this.slideWidth}% !important;
                 display: flex !important;;
                 align-items: center !important;;
-                justify-content: center !important;;
-                margin: auto 0 !important;
+                justify-content: center ;
+                
             }
         `
         style.textContent = styleString;

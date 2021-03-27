@@ -3,10 +3,10 @@ import documentListener from "./modules/documentListener";
 import buttonUp from "./modules/buttonUp";
 import menuInit from "./modules/menuInit";
 import maskPhone from "./modules/lib/maskPhone";
-import bindModal from "./modules/bindModal";
+import bindModal from "./modules/lib/bindModal";
 import SliderCompany from "./modules/lib/sliderCompany";
 import formListener from "./modules/formListener";
-import iconHoverInit from "./modules/iconHoverInit";
+import iconHoverInit from "./modules/lib/iconHoverInit";
 import typesRepairTypes from "./modules/typesRepairTypes";
 import transparensySlider from "./modules/transparensySlider";
 import transparencyPopupSlider from "./modules/transparencyPopupSlider";
@@ -16,6 +16,7 @@ import shemeButtonSliderInit from "./modules/shemeButtonSliderInit";
 import SliderForButtons from "./modules/lib/sliderForButtons";
 import accordion from "./modules/accordion";
 import designTabsInit from "./modules/designTabsInit";
+import designPopupInit from "./modules/designPopupInit";
 
 
 showPhone();
@@ -45,6 +46,7 @@ reviewsSliderInit();
 shemeButtonSliderInit();
 accordion();
 designTabsInit();
+// designPopupInit();
 
 const formulaSlider = new SliderCompany({
     main: '.formula-slider-wrap',
@@ -93,25 +95,7 @@ const shemeButtonSlider = new SliderForButtons({
         },
     ]
 });
-const sliderTabs = new SliderForButtons({
-    main: '.repair-types-nav',
-    wrapper: '.nav-list-repair',
-    slidesToShow: 3,
-    arrowPrev: '.nav-arrow_left',
-    arrowNext: '.nav-arrow_right',
-    maxWidth: 1024,
-    variableWidth: true,
-    responsive: [
-        {
-            breakpoint: 1024,
-            slidesToShow: 3,
-        },
-        {
-            breakpoint: 575,
-            slidesToShow: 1,
-        },
-    ]
-});
+
 const partnersSlider = new SliderCompany({
     main: '#partners .wrapper',
     wrapper: '.partners-slider',

@@ -1,4 +1,4 @@
-import popupCLose from "./popupClose";
+import popupCLose from "./lib/popupClose";
 
 /**
  * Добавление событий клика/клавиш по документу (делегирование)

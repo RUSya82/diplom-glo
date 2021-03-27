@@ -2850,7 +2850,7 @@ div.wave-block:nth-child(17):after {
         max-width: 290px;
         padding: 44px 18px 0;
         font-size: 12px;
-        top: 60px
+        top: 185px
     }
 
     .problems-item-popup:before {
@@ -2891,7 +2891,7 @@ div.wave-block:nth-child(17):after {
 
 @media (max-width: 575px) {
     .problems-item-popup-1 {
-        top: 60px
+        top: 185px
     }
 
     .problems-item-popup-1:before {
@@ -3338,6 +3338,15 @@ div.wave-block:nth-child(17):after {
     /*justify-content: center;*/
     /*align-items: center;*/
 }
+.popup-design-slider__style-slide {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
 
 @media (max-width: 575px) {
     .designs-nav__item:nth-child(5), .designs-nav__item:nth-child(5) svg {
@@ -3353,6 +3362,12 @@ div.wave-block:nth-child(17):after {
     min-width: 100%;
 }
 .designs-slider__style-slide img {
+    display: block;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+}
+.popup-design-slider__style-slide img {
     display: block;
     height: 100%;
     -o-object-fit: cover;
@@ -8263,12 +8278,12 @@ strong {
 
     #problems-arrow_left {
         left: 0;
-        top: 50%
+        top: 35%
     }
 
     #problems-arrow_right {
         right: 0;
-        top: 50%
+        top: 35%
     }
 
     #partners-arrow_left {

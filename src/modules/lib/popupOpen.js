@@ -1,5 +1,5 @@
 import popupCLose from "./popupClose";
-import toggleLockBody from "./toggleLockBody";
+import toggleLockBody from "../toggleLockBody";
 
 const popupOpen = (popup, callback, ...args) => {
     console.log()
