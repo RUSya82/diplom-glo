@@ -218,6 +218,9 @@
 .services-slider__slide.services-item.active {
     display: flex;
 }
+.formula-item.active-item{
+    opacity: 1;
+}
 
 
 
