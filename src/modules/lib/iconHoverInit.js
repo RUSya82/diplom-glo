@@ -1,11 +1,22 @@
-
 const iconHoverInit = ({
-            icon,
-            item,
-            popup
+                           icon,
+                           item,
+                           popup,
+                           arrowSelector
                        }) => {
     const icons = document.querySelectorAll(icon);
     const items = document.querySelectorAll(item);
+    const arrows = document.querySelectorAll(arrowSelector);
+
+    arrows.forEach(item => {
+        item.addEventListener('click', () =>{
+            items.forEach(item => {
+                if(item.classList.contains('active-item')){
+                    item.classList.remove('active-item');
+                }
+            });
+        });
+    })
 
 
     const showIconPopup = (e) => {

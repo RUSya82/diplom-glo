@@ -36,11 +36,15 @@ formListener();
 iconHoverInit({
     icon: '.formula-item__icon',
     item: '.formula-item',
-    popup: '.formula-item-popup'});
+    popup: '.formula-item-popup',
+    arrowSelector: '.slider-arrow-formula'
+});
 iconHoverInit({
     icon: '.problems-item__icon',
     item: '.problems-item',
-    popup: '.problems-item-popup'});
+    popup: '.problems-item-popup',
+    arrowSelector: '.slider-arrow-problems'
+});
 typesRepairTypes();
 transparensySlider();
 portfolioSlider();
