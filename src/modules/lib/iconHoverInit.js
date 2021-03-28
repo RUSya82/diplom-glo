@@ -2,21 +2,54 @@ const iconHoverInit = ({
                            icon,
                            item,
                            popup,
-                           arrowSelector
+                           arrowNextSelector,
+                           arrowPrevSelector
                        }) => {
     const icons = document.querySelectorAll(icon);
     const items = document.querySelectorAll(item);
-    const arrows = document.querySelectorAll(arrowSelector);
+    const arrowNext = document.querySelector(arrowNextSelector);
+    const arrowPrev = document.querySelector(arrowPrevSelector);
 
-    arrows.forEach(item => {
-        item.addEventListener('click', () =>{
-            items.forEach(item => {
-                if(item.classList.contains('active-item')){
-                    item.classList.remove('active-item');
+    arrowNext.addEventListener('click', (e) => {
+        const current = document.querySelector(item + '.active-item');
+        let nextIndex = 0;
+        items.forEach((item, index) => {
+            if (item.classList.contains('active-item')) {
+                item.classList.remove('active-item');
+            }
+
+            if (item === current) {
+                nextIndex = index + 1;
+                if(nextIndex > items.length - 1){
+                    nextIndex = items.length - 1;
                 }
-            });
+            }
         });
-    })
+        if(!items[nextIndex].classList.contains('active-item')){
+            items[nextIndex].classList.add('active-item');
+        }
+
+    });
+    arrowPrev.addEventListener('click', (e) => {
+        const current = document.querySelector(item + '.active-item');
+        let nextIndex = 0;
+        items.forEach((item, index) => {
+            if (item.classList.contains('active-item')) {
+                item.classList.remove('active-item');
+            }
+
+            if (item === current) {
+                nextIndex = index - 1;
+                if(nextIndex < 0){
+                    nextIndex = 0;
+                }
+            }
+        });
+        if(!items[nextIndex].classList.contains('active-item')){
+            items[nextIndex].classList.add('active-item');
+        }
+    });
+
 
 
     const showIconPopup = (e) => {

@@ -37,13 +37,15 @@ iconHoverInit({
     icon: '.formula-item__icon',
     item: '.formula-item',
     popup: '.formula-item-popup',
-    arrowSelector: '.slider-arrow-formula'
+    arrowNextSelector: '#formula-arrow_right',
+    arrowPrevSelector: '#formula-arrow_left',
 });
 iconHoverInit({
     icon: '.problems-item__icon',
     item: '.problems-item',
     popup: '.problems-item-popup',
-    arrowSelector: '.slider-arrow-problems'
+    arrowNextSelector: '#problems-arrow_right',
+    arrowPrevSelector: '#problems-arrow_left'
 });
 typesRepairTypes();
 transparensySlider();
